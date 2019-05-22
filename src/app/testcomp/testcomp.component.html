@@ -1,0 +1,22 @@
+  <!--<div *ngFor="let numb of numbers">
+    {{ numb }}
+  </div>-->
+
+  <div class="col-xs-12">
+    <button class="btn btn-success" (click)="changeOddElement()">Just test</button>
+  </div>
+  <div>
+    <p appBasicHighlight>Style me with </p>
+    <p appBetterHighlight>Style me with </p>
+  </div>
+
+  <div *appUnless="onlyOdd">
+    <li
+      class="list-group-item"
+      [ngClass]="{odd: even % 2 !== 0}"
+      [ngStyle]="{backgroundColor: even % 2 !== 0 ? 'yellow' : 'transparent'}"
+      *ngFor="let even of evenNumbers">
+      {{ even }}
+    </li>
+  </div>
+
